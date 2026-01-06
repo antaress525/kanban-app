@@ -34,4 +34,5 @@
         </div>
         <x-button type="submit" variant="secondary" size="default" class="w-full shadow">Continuer avec Google</x-button>
     </form>
+    <p class="text-xs text-center">J’ai deja un compte? <x-link :href="route('login')" wire:navigate>Me connecter</x-link> </p>
 </div>
