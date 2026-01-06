@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl font-poppins">Rejoignez la plateforme</h2>
         <p class="text-sm text-neutral-500">Travaillez plus vite. Collaborez mieux. Avancez sans friction.</p>
     </div>
-    <form class="space-y-9">
+    <form class="space-y-6">
         <div class="space-y-1.5">
             <x-label for="name">Nom complet</x-label>
             <x-input name="name" placeholder="Nom complet"></x-input>
@@ -16,5 +16,10 @@
             <x-label for="password">Mot de passe</x-label>
             <x-input type="password" name="password" placeholder="Mot de passe"></x-input>
         </div>
+        <x-button type="primary" size="default" class="w-full">S’inscrire et démarrer</x-button>
+        <div class="flex items-center justify-between gap-x-4 text-neutral-400">
+            <x-separator class="flex-1"></x-separator>Ou<x-separator class="flex-1"></x-separator>
+        </div>
+        <x-button type="secondary" size="default" class="w-full shadow">Continuer avec Google</x-button>
     </form>
 </div>
