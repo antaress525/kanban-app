@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::prefix('')->group(function () {
+Route::prefix('')->middleware(['guest'])->group(function () {
     Route::get('register', Register::class)->name('register');
 });

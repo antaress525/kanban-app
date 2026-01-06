@@ -3,23 +3,35 @@
         <h2 class="font-semibold text-xl font-poppins">Rejoignez la plateforme</h2>
         <p class="text-sm text-neutral-500">Travaillez plus vite. Collaborez mieux. Avancez sans friction.</p>
     </div>
-    <form class="space-y-6">
+    <form wire:submit="register" class="space-y-6">
         <div class="space-y-1.5">
             <x-label for="name">Nom complet</x-label>
-            <x-input name="name" placeholder="Nom complet"></x-input>
+            <div class="space-y-0.5">
+                <x-input wire:model="form.name" name="name" placeholder="john doe"></x-input>
+                @error('form.name') <x-error>{{ $message }}</x-error> @enderror
+            </div>
         </div>
         <div class="space-y-1.5">
             <x-label for="email">Adresse e-mail</x-label>
-            <x-input type="email" name="email" placeholder="Adresse e-mail"></x-input>
+            <div class="space-y-0.5">
+                <x-input wire:model="form.email" type="email" name="email" placeholder="john@gmail.com"></x-input>
+                @error('form.email') <x-error>{{ $message }}</x-error> @enderror
+            </div>
         </div>
         <div class="space-y-1.5">
             <x-label for="password">Mot de passe</x-label>
-            <x-input type="password" name="password" placeholder="Mot de passe"></x-input>
+            <div class="space-y-0.5">
+                <x-input wire:model="form.password" type="password" name="password" placeholder="Mot de passe"></x-input>
+                @error('form.password') <x-error>{{ $message }}</x-error> @enderror
+            </div>
         </div>
-        <x-button type="primary" size="default" class="w-full">S’inscrire et démarrer</x-button>
+        <x-button type="primary" size="default" class="w-full">
+            <x-spinner wire:loading.delay class="w-4 h-4 fill-white"/>
+            S’inscrire et démarrer
+        </x-button>
         <div class="flex items-center justify-between gap-x-4 text-neutral-400">
             <x-separator class="flex-1"></x-separator>Ou<x-separator class="flex-1"></x-separator>
         </div>
-        <x-button type="secondary" size="default" class="w-full shadow">Continuer avec Google</x-button>
+        <x-button type="submit" variant="secondary" size="default" class="w-full shadow">Continuer avec Google</x-button>
     </form>
 </div>
