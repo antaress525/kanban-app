@@ -15,9 +15,7 @@
     <body class="w-screen h-screen flex max-lg:flex-col">
         <!-- Nav Mobile -->
         <nav class="flex items-center justify-between h-13 p-4 lg:hidden">
-            <button class="cursor-pointer">
-                <x-lucide-menu class="size-5 text-neutral-600"/>
-            </button>
+            <x-mobile-nav-toggle/>
             <x-avatar :name="auth()->user()->name" :avatar="'https://ui-avatars.com/api/?name='.auth()->user()->name"/>
         </nav>
 
