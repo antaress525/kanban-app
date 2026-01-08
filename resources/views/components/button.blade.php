@@ -14,7 +14,7 @@
 
     $variantClasses = [
         'primary' => 'bg-indigo-500 text-white hover:bg-indigo-600',
-        'secondary' => 'bg-white text-neutral-800 border border-neutral-200 shadow-sm hover:bg-neutral-50',
+        'secondary' => 'bg-white text-neutral-800 border border-neutral-200 shadow-2xs hover:bg-neutral-50',
         'danger' => 'bg-red-500 text-white hover:bg-red-600',
     ][$variant] ?? 'bg-indigo-500 text-white hover:bg-indigo-600';
 
