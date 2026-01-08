@@ -29,7 +29,7 @@
 
             <!-- Navigation -->
             <div class="space-y-2 flex-1">
-                <x-nav-item href="/dashboard" :active="true">
+                <x-nav-item :href="route('board.index')" :active="request()->routeIs('board.*')">
                     <x-slot:icon>
                         <x-lucide-folder class="size-5"/>
                     </x-slot:icon>

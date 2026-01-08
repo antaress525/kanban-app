@@ -15,6 +15,6 @@ Route::prefix('')->middleware(['guest'])->group(function () {
     Route::get('login', Login::class)->name('login');
 });
 
-Route::prefix('board')->middleware(['auth'])->group(function () {
-    Route::get('/', IndexPage::class)->name('board.index');
+Route::prefix('board')->name('board.')->middleware(['auth'])->group(function () {
+    Route::get('/', IndexPage::class)->name('index');
 });

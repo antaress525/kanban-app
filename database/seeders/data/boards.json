@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Project Alpha",
+        "color": "#FF5733"
+    },
+    {
+        "name": "Project Beta",
+        "color": "#33FF57"
+    },
+    {
+        "name": "Project Gamma",
+        "color": "#3357FF"
+    },
+    {
+        "name": "Project Delta",
+        "color": "#FF33A1"
+    },
+    {
+        "name": "Project Epsilon",
+        "color": "#A133FF"
+    },
+    {
+        "name": "Project Zeta",
+        "color": "#33FFA1"
+    },
+    {
+        "name": "Project Eta",
+        "color": "#FFA133"
+    },
+    {
+        "name": "Project Theta",
+        "color": "#33A1FF"
+    },
+    {
+        "name": "Project Iota",
+        "color": "#A1FF33"
+    },
+    {
+        "name": "Project Kappa",
+        "color": "#FF5733"
+    },
+    {
+        "name": "Project Lambda",
+        "color": "#33FF57"
+    },
+    {
+        "name": "Project Mu",
+        "color": "#3357FF"
+    },
+    {
+        "name": "Project Nu",
+        "color": "#FF33A1"
+    },
+    {
+        "name": "Project Xi",
+        "color": "#A133FF"
+    },
+    {
+        "name": "Project Omicron",
+        "color": "#33FFA1"
+    },
+    {
+        "name": "Project Pi",
+        "color": "#FFA133"
+    },
+    {
+        "name": "Project Rho",
+        "color": "#33A1FF"
+    },
+    {
+        "name": "Project Sigma",
+        "color": "#A1FF33"
+    },
+    {
+        "name": "Project Tau",
+        "color": "#FF5733"
+    },
+    {
+        "name": "Project Upsilon",
+        "color": "#33FF57"
+    },
+    {
+        "name": "Project Phi",
+        "color": "#3357FF"
+    },
+    {
+        "name": "Project Chi",
+        "color": "#FF33A1"
+    },
+    {
+        "name": "Project Psi",
+        "color": "#A133FF"
+    },
+    {
+        "name": "Project Omega",
+        "color": "#33FFA1"
+    },
+    {
+        "name": "Project Alpha 2",
+        "color": "#FFA133"
+    }
+]

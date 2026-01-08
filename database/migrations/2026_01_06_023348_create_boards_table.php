@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('boards', function (Blueprint $table) {
-            $table->uuid()->primary();
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->string('color')->default('#FFFFFF');
             $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
