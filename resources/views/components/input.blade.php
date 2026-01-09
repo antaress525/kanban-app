@@ -68,7 +68,7 @@
     ]);
 @endphp
 
-<div class="relative w-full">
+<div {{ $attributes->merge(['class' => 'relative']) }}>
     {{-- Prefix --}}
     @isset($prefix)
         <span class="absolute inset-y-0 left-0 flex items-center justify-center w-10 text-neutral-500 pointer-events-none">
@@ -86,7 +86,7 @@
         aria-invalid="{{ $attributes->get('aria-invalid', 'false') }}"
         {{ $disabled ? 'disabled' : '' }}
         {{ $required ? 'required' : '' }}
-        {{ $attributes->merge(['class' => $inputClasses]) }}
+        class="{{ $inputClasses }}"
     >
 
     {{-- Suffix --}}
