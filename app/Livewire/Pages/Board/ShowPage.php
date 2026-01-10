@@ -12,12 +12,17 @@ class ShowPage extends Component
 
     public function mount(Board $board)
     {
-        $this->board = $board;
+        $this->board = $board->load(['tasks']);
     }
 
     public function render()
     {
-        return view('livewire.pages.board.show-page')
-            ->title(Str::slug($this->board->name));
+        return view('livewire.pages.board.show-page',[
+            'board' => $this->board,
+            'tasks' => $this->board->tasks()
+                ->orderBy('order')->get()
+                ->groupBy('status'),
+        ])
+        ->title(Str::slug($this->board->name));
     }
 }

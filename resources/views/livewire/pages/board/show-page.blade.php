@@ -31,7 +31,7 @@
             <x-lucide-sliders-horizontal class="size-4 text-neutral-500"/>
             Filtre
         </x-button>
-        <x-input name="search" size="md" class="w-3xs" placeholder="Recherche">
+        <x-input name="search" size="md" class="w-full sm:w-3xs" placeholder="Recherche">
             <x-slot:prefix>
                 <x-lucide-search class="size-4 text-neutral-500"/>
             </x-slot:prefix>
@@ -47,16 +47,13 @@
 
             <!-- Tasks -->
             <x-tasks.container>
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
+                @foreach ($tasks->get('todo', []) as $task)
+                    <x-task-item :task="$task" />
+                @endforeach
             </x-tasks.container>
 
             <!--Tasks empty state -->
-            <x-tasks.empty class="hidden" />
+            <x-tasks.empty wire:show="tasks->get('todo')->isNotEmpty()" />
 
             <!-- Add task -->
             <x-button variant="secondary" class="w-full">
@@ -68,20 +65,17 @@
         <!-- In Progress Column -->
         <x-tasks.column>
             <!-- Column header -->
-            <x-tasks.header class="bg-orange-500">En cours</x-tasks.header>
+            <x-tasks.header class="bg-amber-500">En cours</x-tasks.header>
 
             <!-- Tasks -->
             <x-tasks.container>
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
+                @foreach ($tasks->get('in_progress', []) as $task)
+                    <x-task-item :task="$task" />
+                @endforeach
             </x-tasks.container>
 
             <!--Tasks empty state -->
-            <x-tasks.empty class="hidden" />
+            <x-tasks.empty wire:show="tasks->get('in_progress')->isNotEmpty()" />
 
             <!-- Add task -->
             <x-button variant="secondary" class="w-full">
@@ -93,20 +87,17 @@
         <!-- Done Column -->
         <x-tasks.column>
             <!-- Column header -->
-            <x-tasks.header class="bg-blue-500">Revision</x-tasks.header>
+            <x-tasks.header class="bg-sky-500">Revision</x-tasks.header>
 
             <!-- Tasks -->
             <x-tasks.container>
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
+                @foreach ($tasks->get('review', []) as $task)
+                    <x-task-item :task="$task" />
+                @endforeach
             </x-tasks.container>
 
             <!--Tasks empty state -->
-            <x-tasks.empty class="hidden" />
+            <x-tasks.empty wire:show="tasks->get('review')->isNotEmpty()" />
 
             <!-- Add task -->
             <x-button variant="secondary" class="w-full">
@@ -122,16 +113,13 @@
 
             <!-- Tasks -->
             <x-tasks.container>
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
-                <x-tasks.item />
+                @foreach ($tasks->get('done', []) as $task)
+                    <x-task-item :task="$task" />
+                @endforeach
             </x-tasks.container>
 
             <!--Tasks empty state -->
-            <x-tasks.empty class="hidden" />
+            <x-tasks.empty wire:show="tasks->get('done')->isNotEmpty()" />
 
             <!-- Add task -->
             <x-button variant="secondary" class="w-full">
