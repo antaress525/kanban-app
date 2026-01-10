@@ -18,5 +18,6 @@ Route::prefix('')->middleware(['guest'])->group(function () {
 
 Route::prefix('board')->name('board.')->middleware(['auth'])->group(function () {
     Route::get('/', IndexPage::class)->name('index');
-    Route::get('/{board}', ShowPage::class)->name('show');
+    Route::get('/{board}', ShowPage::class)->name('show')
+        ->can('view', 'board');
 });
