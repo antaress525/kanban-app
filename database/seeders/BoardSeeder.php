@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Board;
 use App\Models\User;
+use App\Models\Task;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 
@@ -28,7 +29,14 @@ class BoardSeeder extends Seeder
         $boards = json_decode($boardsData, true);
 
         foreach ($boards as $boardData) {
-            $user->boards()->create($boardData);
+            $tasks = $boardData['tasks'] ?? [];
+            unset($boardData['tasks']); // Remove tasks from board data
+
+            $board = $user->boards()->create($boardData);
+
+            foreach ($tasks as $taskData) {
+                $board->tasks()->create($taskData);
+            }
         }
     }
 }

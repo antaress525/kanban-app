@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->dateTime('due_date')->nullable();
             $table->string('status');
-            $table->integer(column: 'order');
+            $table->integer('order')->default(1);
             $table->timestamps();
             $table->foreignUuid('board_id')->constrained('boards')->cascadeOnDelete();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
